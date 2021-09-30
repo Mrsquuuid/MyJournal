@@ -1,0 +1,2 @@
+# MyJournal
+COMP90018
