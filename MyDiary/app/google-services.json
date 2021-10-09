@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "642924062908",
+    "firebase_url": "https://mydiary-5b6f5-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "mydiary-5b6f5",
+    "storage_bucket": "mydiary-5b6f5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:642924062908:android:ce0213a4e76158ff4dc8b9",
+        "android_client_info": {
+          "package_name": "com.example.mydiary"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "642924062908-1055hnqufadbonm0ceuajfljeef3mduf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBpN31CpJ2V-FG-c4h3WQ2StD8gcTjLkMw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "642924062908-1055hnqufadbonm0ceuajfljeef3mduf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
