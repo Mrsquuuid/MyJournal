@@ -1,14 +1,23 @@
 <resources>
 
+<!--    &lt;!&ndash; Base application theme. &ndash;&gt;-->
+<!--    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+<!--        &lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="colorPrimary">@color/colorPrimary</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>&ndash;&gt;-->
+<!--&lt;!&ndash;        <item name="colorAccent">@color/colorAccent</item>&ndash;&gt;-->
+<!--        <item name="colorPrimary">#4287F5</item>-->
+<!--        <item name="colorPrimaryDark">#4287F5</item>-->
+<!--        <item name="colorAccent">#4287F5</item>-->
+<!--    </style>-->
+
+
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
-<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-<!--        <item name="colorAccent">@color/colorAccent</item>-->
-        <item name="colorPrimary">#4287F5</item>
-        <item name="colorPrimaryDark">#4287F5</item>
-        <item name="colorAccent">#4287F5</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
     </style>
 
 </resources>
