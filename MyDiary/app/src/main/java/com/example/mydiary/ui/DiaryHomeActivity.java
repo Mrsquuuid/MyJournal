@@ -1,12 +1,15 @@
 package com.example.mydiary.ui;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.appcompat.app.ActionBar;
@@ -109,7 +112,7 @@ public class DiaryHomeActivity extends AppCompatActivity {
     private void initTitle() {
         mMainTvDate.setText("Today, " + GetDate.getDate());
         mCommonTvTitle.setText("Diary");
-        mCommonIvBack.setVisibility(View.INVISIBLE);
+        // mCommonIvBack.setVisibility(View.INVISIBLE);
         mCommonIvTest.setVisibility(View.INVISIBLE);
 
     }
@@ -167,10 +170,20 @@ public class DiaryHomeActivity extends AppCompatActivity {
         EventBus.getDefault().unregister(this);
     }
 
-    @OnClick(R.id.main_fab_enter_edit)
-    public void onClick() {
-        AddDiaryActivity.startActivity(this);
+
+    @OnClick({R.id.common_iv_back, R.id.main_fab_enter_edit})
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.common_iv_back:
+                MainActivity.startActivity(this);
+                break;
+            case R.id.main_fab_enter_edit:
+                AddDiaryActivity.startActivity(this);
+                break;
+        }
     }
+
+
 
     @Override
     public void onBackPressed() {
