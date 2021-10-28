@@ -1,13 +1,13 @@
-package com.example.mydiary;
+package com.example.mydiary.bean;
 
-public class User {
+public class UserBean {
     public String username, email, password;
 
-    public User() {
+    public UserBean() {
 
     }
 
-    public User(String username, String email, String password) {
+    public UserBean(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;

@@ -17,11 +17,6 @@
             android:name=".ui.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <!-- android:name="com.example.mydiary.DiaryApplication" -->
         <!-- android:allowBackup="true" -->
@@ -30,13 +25,17 @@
         <!-- android:supportsRtl="true" -->
         <!-- android:theme="@style/AppTheme"> -->
         <activity
-            android:name=".ForgotPassword"
+            android:name=".ui.ForgotPasswordActivity"
             android:exported="true" />
         <activity
-            android:name=".SignUp"
+            android:name=".ui.SignUpActivity"
             android:exported="true" />
-        <activity android:name=".LogIn" >
+        <activity android:name=".ui.LogInActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.DiaryHomeActivity"

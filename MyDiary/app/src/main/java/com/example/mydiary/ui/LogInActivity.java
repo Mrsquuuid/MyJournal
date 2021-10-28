@@ -1,4 +1,4 @@
-package com.example.mydiary;
+package com.example.mydiary.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,13 +13,13 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.mydiary.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class LogIn extends AppCompatActivity implements View.OnClickListener{
+public class LogInActivity extends AppCompatActivity implements View.OnClickListener{
 
     private TextView forgotPassword;
     private EditText editTextEmail, editTextPassword;
@@ -54,7 +54,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.signup:
-                startActivity(new Intent(this, SignUp.class));
+                startActivity(new Intent(this, SignUpActivity.class));
                 break;
 
             case R.id.login:
@@ -62,7 +62,7 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
                 break;
 
             case R.id.forgotPassword:
-                startActivity(new Intent(this, ForgotPassword.class));
+                startActivity(new Intent(this, ForgotPasswordActivity.class));
                 break;
         }
     }
@@ -102,11 +102,11 @@ public class LogIn extends AppCompatActivity implements View.OnClickListener{
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
                     // TODO: redirect to diary page
-//                    startActivity(new Intent(LogIn.this, Diary.class));
+                    startActivity(new Intent(LogInActivity.this, MainActivity.class));
                     System.out.println("Log in successful");
                     progressBar.setVisibility(View.GONE);
                 } else {
-                    Toast.makeText(LogIn.this, "Failed to login. Please check your credentials", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LogInActivity.this, "Failed to login. Please check your credentials", Toast.LENGTH_LONG).show();
                     progressBar.setVisibility(View.GONE);
                 }
             }

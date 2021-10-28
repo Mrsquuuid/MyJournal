@@ -1,4 +1,4 @@
-package com.example.mydiary;
+package com.example.mydiary.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,13 +13,15 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mydiary.R;
+import com.example.mydiary.bean.UserBean;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class SignUp extends AppCompatActivity implements View.OnClickListener{
+public class SignUpActivity extends AppCompatActivity implements View.OnClickListener{
     private TextView banner, register;
     private EditText editTextUsername, editTextEmail, editTextPassword;
     private ProgressBar progressBar;
@@ -51,7 +53,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.banner:
-                startActivity(new Intent(this, LogIn.class));
+                startActivity(new Intent(this, LogInActivity.class));
                 break;
             case R.id.register:
                 userRegister();
@@ -100,26 +102,26 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener{
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            User user = new User(username, email, password);
+                            UserBean userBean = new UserBean(username, email, password);
                             FirebaseDatabase.getInstance().getReference("Users")
                                     .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                    .setValue(userBean).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if(task.isSuccessful()) {
-                                        Toast.makeText(SignUp.this, "User has been registered successfully.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(SignUpActivity.this, "User has been registered successfully.", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                         // redirect to login layout
-                                        startActivity(new Intent(SignUp.this, LogIn.class));
+                                        startActivity(new Intent(SignUpActivity.this, LogInActivity.class));
 
                                     } else {
-                                        Toast.makeText(SignUp.this, "Failed to register. Please try again.", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(SignUpActivity.this, "Failed to register. Please try again.", Toast.LENGTH_LONG).show();
                                         progressBar.setVisibility(View.GONE);
                                     }
                                 }
                             });
                         } else {
-                            Toast.makeText(SignUp.this, "Failed to register. Please try again.", Toast.LENGTH_LONG).show();
+                            Toast.makeText(SignUpActivity.this, "Failed to register. Please try again.", Toast.LENGTH_LONG).show();
                             progressBar.setVisibility(View.GONE);
                         }
                     }
