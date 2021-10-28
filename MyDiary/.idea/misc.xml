@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../layout/custom_preview.xml" value="0.1" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/edittext_rounded_corner_bg.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/view_bottom_shadow.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/view_top_shadow.xml" value="0.21822916666666667" />
@@ -19,6 +20,8 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21784420289855072" />
         <entry key="app/src/main/res/layout/activity_signup.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_voice_memo.xml" value="0.23125" />
+        <entry key="app/src/main/res/layout/adapter_voice.xml" value="0.23125" />
       </map>
     </option>
   </component>

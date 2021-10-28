@@ -19,7 +19,7 @@ import com.example.mydiary.R;
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button toDiary,toCamera;
+    private Button toDiary,toCamera,toVoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +40,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        toVoice = findViewById(R.id.button3);
+        toVoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, VoiceMemoActivity.class);
                 startActivity(intent);
             }
         });

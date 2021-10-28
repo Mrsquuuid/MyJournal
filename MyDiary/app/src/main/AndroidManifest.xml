@@ -10,6 +10,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
 
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.STORAGE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -62,6 +65,11 @@
         </activity>
         <activity
             android:name=".ui.CameraActivity"
+            tools:ignore="WrongManifestParent" >
+        </activity>
+
+        <activity
+            android:name=".ui.VoiceMemoActivity"
             tools:ignore="WrongManifestParent" >
         </activity>
 
