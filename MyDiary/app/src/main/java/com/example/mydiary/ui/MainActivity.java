@@ -18,7 +18,7 @@ import com.example.mydiary.R;
 public class MainActivity extends AppCompatActivity {
 
 
-    private Button toDiary;
+    private Button toDiary,toCamera;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +30,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, DiaryHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        toCamera = findViewById(R.id.button2);
+        toCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
                 startActivity(intent);
             }
         });
