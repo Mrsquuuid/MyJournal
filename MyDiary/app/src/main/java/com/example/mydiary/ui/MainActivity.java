@@ -22,7 +22,7 @@ import com.example.mydiary.R;
 public class MainActivity extends AppCompatActivity {
 
 
-    private ImageButton toCamera,toVoice;
+    private ImageButton toCamera,toVoice,toNavigation;
     private FloatingActionButton toDiary;
 
     @Override
@@ -53,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, VoiceMemoActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        toNavigation = findViewById(R.id.user_btn);
+        toNavigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, NavigationActivity.class);
                 startActivity(intent);
             }
         });
