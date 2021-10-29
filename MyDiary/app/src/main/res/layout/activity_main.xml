@@ -85,20 +85,9 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
             android:layout_marginTop="30dp"
-            android:text="Welcome to"
+            android:text="Welcome to My Diary"
             android:textColor="#000"
-            android:textSize="40dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/welcome2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="90dp"
-            android:text="My Diary"
-            android:textColor="#000"
-            android:textSize="35dp"
+            android:textSize="36dp"
             android:textStyle="bold" />
 
         <androidx.cardview.widget.CardView
@@ -106,7 +95,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
-            android:layout_marginTop="150dp"
+            android:layout_marginTop="100dp"
             android:layout_marginRight="10dp"
             android:paddingBottom="20dp"
             app:cardCornerRadius="20dp"
