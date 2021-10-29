@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import cc.trity.floatingactionbutton.FloatingActionButton;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -21,14 +22,15 @@ import com.example.mydiary.R;
 public class MainActivity extends AppCompatActivity {
 
 
-    private ImageButton toDiary,toCamera,toVoice;
+    private ImageButton toCamera,toVoice;
+    private FloatingActionButton toDiary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        toDiary = findViewById(R.id.home_btn);
+        toDiary = findViewById(R.id.diary_home_btn);
         toDiary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

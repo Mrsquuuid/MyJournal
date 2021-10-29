@@ -4,7 +4,6 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="?attr/colorPrimary"
     android:minHeight="?attr/actionBarSize"
     app:layout_scrollFlags="scroll|enterAlways"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
@@ -14,9 +13,9 @@
         android:id="@+id/go_back"
         android:paddingLeft="5dp"
         android:layout_width="50dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/ic_arrow_back_black_24dp"
+        android:src="@drawable/icon_arrow_arrow_left"
         />
 
 </androidx.appcompat.widget.Toolbar>
