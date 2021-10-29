@@ -16,6 +16,7 @@ import com.mapbox.android.core.location.LocationEnginePriority;
 import com.mapbox.android.core.location.LocationEngineProvider;
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
+import com.mapbox.api.directions.v5.DirectionsCriteria;
 import com.mapbox.api.directions.v5.models.DirectionsResponse;
 import com.mapbox.api.directions.v5.models.DirectionsRoute;
 import com.mapbox.geojson.Point;
@@ -36,16 +37,17 @@ import com.mapbox.services.android.navigation.ui.v5.route.NavigationMapRoute;
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute;
 
 import java.util.List;
+import java.util.Locale;
 
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class NavigationActivity extends AppCompatActivity implements OnMapReadyCallback, MapboxMap.OnMapClickListener, LocationEngineListener, PermissionsListener {
+public class MapActivity extends AppCompatActivity implements OnMapReadyCallback, MapboxMap.OnMapClickListener, LocationEngineListener, PermissionsListener {
 
     private MapView mapView;
     private MapboxMap map;
-    private Button startButton;
+//    private Button startButton;
     private PermissionsManager permissionsManager;
     private LocationEngine locationEngine;
     private LocationLayerPlugin locationLayerPlugin;
@@ -60,18 +62,18 @@ public class NavigationActivity extends AppCompatActivity implements OnMapReadyC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Mapbox.getInstance(this, getString(R.string.access_token));
-        setContentView(R.layout.activity_navigation);
+        setContentView(R.layout.activity_map);
         mapView = (MapView) findViewById(R.id.mapView);
-        startButton = findViewById(R.id.startButton);
+//        startButton = findViewById(R.id.startButton);
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
-        startButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                NavigationLauncherOptions options = NavigationLauncherOptions.builder().origin(originPosition).destination(destinationPosition).shouldSimulateRoute(true).build();
-                NavigationLauncher.startNavigation(NavigationActivity.this, options);
-            }
-        });
+//        startButton.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v) {
+//                NavigationLauncherOptions options = NavigationLauncherOptions.builder().origin(originPosition).destination(destinationPosition).shouldSimulateRoute(true).build();
+//                NavigationLauncher.startNavigation(MapActivity.this, options);
+//            }
+//        });
     }
 
     @Override
@@ -127,8 +129,8 @@ public class NavigationActivity extends AppCompatActivity implements OnMapReadyC
         destinationPosition = Point.fromLngLat(point.getLongitude(), point.getLatitude());
         originPosition = Point.fromLngLat(originLocation.getLongitude(), originLocation.getLatitude());
         getRoute(originPosition, destinationPosition);
-        startButton.setEnabled(true);
-        startButton.setBackgroundResource(R.color.mapboxBlue);
+//        startButton.setEnabled(true);
+//        startButton.setBackgroundResource(R.color.mapboxBlue);
     }
 
     private void getRoute(Point origin, Point destination) {
