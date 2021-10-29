@@ -78,165 +78,162 @@
         app:fab_icon="@drawable/add"
         app:fab_title="FAB ADD" />
 
-    <TextView
-        android:id="@+id/welcome1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Welcome to"
-        android:textColor="#000"
-        android:textSize="40dp"
-        android:textStyle="bold"/>
 
-    <TextView
-        android:id="@+id/welcome2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="85dp"
-        android:text="My Diary"
-        android:textColor="#000"
-        android:textSize="35dp"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/stories"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="150dp"
-        android:text="Stories"
-        android:textColor="#000"
-        android:textSize="20dp" />
-
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="190dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
-
-        <LinearLayout
+        <TextView
+            android:id="@+id/welcome1"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:text="Welcome to"
+            android:textColor="#000"
+            android:textSize="40dp"
+            android:textStyle="bold" />
 
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image1"
-                android:paddingRight="10dp"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/temp1"
-                app:civ_border_color="#00000000"
-                app:civ_border_width="2dp" />
+        <TextView
+            android:id="@+id/welcome2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="90dp"
+            android:text="My Diary"
+            android:textColor="#000"
+            android:textSize="35dp"
+            android:textStyle="bold" />
 
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image2"
-                android:paddingRight="10dp"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/temp1"
-                app:civ_border_color="#00000000"
-                app:civ_border_width="2dp" />
-
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image3"
-                android:paddingRight="10dp"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/temp1"
-                app:civ_border_color="#00000000"
-                app:civ_border_width="2dp" />
-
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image5"
-                android:paddingRight="10dp"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/temp1"
-                app:civ_border_color="#00000000"
-                app:civ_border_width="2dp" />
-
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image6"
-                android:paddingRight="10dp"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/temp1"
-                app:civ_border_color="#00000000"
-                app:civ_border_width="2dp" />
-
-            <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/profile_image4"
-                android:paddingRight="10dp"
-                android:layout_width="96dp"
-                android:layout_height="96dp"
-                android:src="@drawable/temp1"
-                app:civ_border_color="#00000000"
-                app:civ_border_width="2dp" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-    <TextView
-        android:id="@+id/shot"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="310dp"
-        android:text="Best moment this week"
-        android:textColor="#000"
-        android:textSize="20dp" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="350dp">
-
-        <LinearLayout
+        <androidx.cardview.widget.CardView
+            android:id="@+id/story_card"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="150dp"
+            android:layout_marginRight="10dp"
+            android:paddingBottom="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp">
 
-            <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                android:id="@+id/imageView1"
-                android:layout_weight="1"
+            <TextView
+                android:id="@+id/stories"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Stories"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/temp1"
+                android:layout_height="100dp"
+                android:layout_marginTop="45dp"
+                android:layout_marginBottom="10dp"
                 android:paddingLeft="10dp"
-                android:paddingRight="5dp"
-                app:riv_border_color="#00000000"
-                app:riv_border_width="3dip"
-                app:riv_corner_radius_bottom_left="20dp"
-                app:riv_corner_radius_bottom_right="20dp"
-                app:riv_corner_radius_top_left="20dp"
-                app:riv_corner_radius_top_right="20dp"
-                app:riv_mutate_background="false"
-                app:riv_oval="false"
-                app:riv_tile_mode="clamp" />
+                android:paddingRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image1"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/temp1"
+                        app:civ_border_color="#00000000"
+                        app:civ_border_width="2dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image2"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/temp1"
+                        app:civ_border_color="#00000000"
+                        app:civ_border_width="2dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image3"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/temp1"
+                        app:civ_border_color="#00000000"
+                        app:civ_border_width="2dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image5"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/temp1"
+                        app:civ_border_color="#00000000"
+                        app:civ_border_width="2dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image6"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/temp1"
+                        app:civ_border_color="#00000000"
+                        app:civ_border_width="2dp" />
+
+                    <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/profile_image4"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/temp1"
+                        app:civ_border_color="#00000000"
+                        app:civ_border_width="2dp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/story_card"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:paddingBottom="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="2dp">
+
+        <TextView
+            android:id="@+id/shot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="15dp"
+            android:text="Best moment this week"
+            android:textColor="#000"
+            android:textSize="20dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="55dp">
 
             <LinearLayout
-                android:layout_weight="1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:paddingLeft="5dp"
-                android:paddingRight="10dp">
-                <com.makeramen.roundedimageview.RoundedImageView
-                    android:id="@+id/imageView2"
-                    android:layout_weight="1"
+                android:layout_marginBottom="10dp"
+                android:orientation="horizontal">
+
+                <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/imageView1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:paddingBottom="5dp"
+                    android:layout_weight="1"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="5dp"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/temp2"
+                    android:src="@drawable/temp1"
                     app:riv_border_color="#00000000"
                     app:riv_border_width="3dip"
                     app:riv_corner_radius_bottom_left="20dp"
@@ -251,34 +248,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:orientation="horizontal"
-                    android:paddingTop="5dp">
-
-                    <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/imageView3"
-                        android:layout_weight="1"
-                        android:layout_width="100dp"
-                        android:layout_height="match_parent"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/temp3"
-                        app:riv_border_color="#00000000"
-                        app:riv_border_width="3dip"
-                        app:riv_corner_radius_bottom_left="20dp"
-                        app:riv_corner_radius_bottom_right="20dp"
-                        app:riv_corner_radius_top_left="20dp"
-                        app:riv_corner_radius_top_right="20dp"
-                        app:riv_mutate_background="false"
-                        app:riv_oval="false"
-                        app:riv_tile_mode="clamp"
-                        android:paddingRight="5dp"/>
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="10dp">
 
                     <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/imageView4"
-                        android:layout_weight="1"
-                        android:layout_width="70dp"
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:scaleType="center"
-                        android:src="@drawable/temp1"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_weight="1"
+                        android:paddingBottom="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/temp2"
                         app:riv_border_color="#00000000"
                         app:riv_border_width="3dip"
                         app:riv_corner_radius_bottom_left="20dp"
@@ -287,18 +272,55 @@
                         app:riv_corner_radius_top_right="20dp"
                         app:riv_mutate_background="false"
                         app:riv_oval="false"
-                        app:riv_tile_mode="clamp"
-                        android:paddingLeft="5dp"/>
+                        app:riv_tile_mode="clamp" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"
+                        android:paddingTop="5dp">
+
+                        <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
+                            android:id="@+id/imageView3"
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingRight="5dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/temp3"
+                            app:riv_border_color="#00000000"
+                            app:riv_border_width="3dip"
+                            app:riv_corner_radius_bottom_left="20dp"
+                            app:riv_corner_radius_bottom_right="20dp"
+                            app:riv_corner_radius_top_left="20dp"
+                            app:riv_corner_radius_top_right="20dp"
+                            app:riv_mutate_background="false"
+                            app:riv_oval="false"
+                            app:riv_tile_mode="clamp" />
+
+                        <com.makeramen.roundedimageview.RoundedImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="70dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:paddingLeft="5dp"
+                            android:scaleType="center"
+                            android:src="@drawable/temp1"
+                            app:riv_border_color="#00000000"
+                            app:riv_border_width="3dip"
+                            app:riv_corner_radius_bottom_left="20dp"
+                            app:riv_corner_radius_bottom_right="20dp"
+                            app:riv_corner_radius_top_left="20dp"
+                            app:riv_corner_radius_top_right="20dp"
+                            app:riv_mutate_background="false"
+                            app:riv_oval="false"
+                            app:riv_tile_mode="clamp" />
+
+                    </LinearLayout>
                 </LinearLayout>
-
-
             </LinearLayout>
-        </LinearLayout>
-
-
-
-
-    </RelativeLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 </RelativeLayout>
 

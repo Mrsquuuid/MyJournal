@@ -4,18 +4,20 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../../layout/custom_preview.xml" value="0.1" />
+        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/card_background.xml" value="0.20078125" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/edittext_rounded_corner_bg.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/fab_label_background.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/home_toolbar_shadow.xml" value="0.2828125" />
+        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/linear_style.xml" value="0.20078125" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/standard_button_bg.xml" value="0.22239583333333332" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/view_bottom_shadow.xml" value="0.21822916666666667" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/drawable/view_top_shadow.xml" value="0.21822916666666667" />
-        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_add_diary.xml" value="0.22" />
+        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_add_diary.xml" value="0.67" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_camera.xml" value="0.20104166666666667" />
-        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_diaryhome.xml" value="0.26856884057971014" />
+        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_diaryhome.xml" value="0.22" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_forgotpassword.xml" value="0.20625" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_signup.xml" value="0.20625" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_test.xml" value="0.20625" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_update_diary.xml" value="0.20625" />
@@ -28,8 +30,8 @@
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/fragment_second.xml" value="0.20625" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/item_first.xml" value="0.20625" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/item_rv_diary.xml" value="0.20625" />
-        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/layout_picture_selector.xml" value="0.2046875" />
-        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/part_common_title.xml" value="0.5" />
+        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/layout_picture_selector.xml" value="0.2" />
+        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/part_common_title.xml" value="0.25" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/toolbar_layout.xml" value="0.20104166666666667" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/xml/file_paths.xml" value="0.276268115942029" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/xml/network_security_config.xml" value="0.17760416666666667" />

@@ -3,7 +3,8 @@
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    >
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/msgList"
@@ -11,21 +12,47 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <Button
-        android:id="@+id/startRec"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="20dp"
-        android:text="Start Recording"
-        android:padding="10dp" />
 
-    <Button
-        android:id="@+id/stopRec"
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:text="Stop Recording"
-        android:padding="10dp"
-        android:layout_marginTop="10dp" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#444"
+        android:paddingTop="10dp">
+        <Button
+            android:id="@+id/startRec"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dip"
+            android:text="Start Recording"
+            android:background="@drawable/standard_button_bg"
+            android:backgroundTint="#FDC439"
+            android:padding="10dp"
+            android:textColor="#fff"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/stopRec"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginLeft="10dip"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dip"
+            android:layout_marginBottom="15dip"
+            android:text="Stop Recording"
+            android:background="@drawable/standard_button_bg"
+            android:backgroundTint="#fff"
+            android:padding="10dp"
+            android:textColor="#373447"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
 
 
 

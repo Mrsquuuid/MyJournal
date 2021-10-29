@@ -5,6 +5,7 @@
               android:layout_height="wrap_content"
               android:orientation="vertical"
               android:paddingRight="10dp"
+              android:paddingLeft="20dp"
               android:background="@color/white"
     >
 
@@ -15,6 +16,7 @@
         android:orientation="horizontal"
         android:paddingLeft="10.8dp"
         android:background="#ffffff"
+        android:layout_marginLeft="10dp"
         >
 
         <ImageView
