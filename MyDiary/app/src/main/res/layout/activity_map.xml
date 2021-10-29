@@ -16,20 +16,20 @@
         mapbox:mapbox_cameraZoom="12"
         />
 
-<!--    <Button-->
-<!--        android:id="@+id/startButton"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="24dp"-->
-<!--        android:layout_marginEnd="24dp"-->
-<!--        android:layout_marginBottom="24dp"-->
-<!--        android:background="@color/mapboxGrayLight"-->
-<!--        android:enabled="false"-->
-<!--        android:text="@string/start_navigation"-->
-<!--        android:textColor="@color/mapboxWhite"-->
-<!--        mapbox:layout_constraintBottom_toBottomOf="parent"-->
-<!--        mapbox:layout_constraintEnd_toEndOf="parent"-->
-<!--        mapbox:layout_constraintStart_toStartOf="parent"-->
-<!--        tools:ignore="TextContrastCheck" />-->
+    <Button
+        android:id="@+id/startButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:background="@color/mapboxGrayLight"
+        android:enabled="false"
+        android:text="@string/start_navigation"
+        android:textColor="@color/mapboxWhite"
+        mapbox:layout_constraintBottom_toBottomOf="parent"
+        mapbox:layout_constraintEnd_toEndOf="parent"
+        mapbox:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TextContrastCheck" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
