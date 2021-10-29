@@ -68,6 +68,7 @@ public abstract class PictureSelectorFragment extends Fragment implements Pictur
         mSelectPictureDialog.show(this);
     }
 
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

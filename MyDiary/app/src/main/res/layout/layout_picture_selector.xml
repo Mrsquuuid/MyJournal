@@ -16,15 +16,15 @@
 
         <Button
             android:id="@+id/picture_selector_take_photo_btn"
+            android:backgroundTint="#F96060"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dip"
             android:layout_marginTop="10dp"
             android:layout_marginRight="10dip"
-            android:background="#4d69ff"
             android:padding="10dp"
             android:text="Take Picture"
-            android:textColor="#BBDEFB"
+            android:textColor="#fff"
             android:textSize="18sp"
             android:textStyle="bold" />
 
@@ -35,10 +35,10 @@
             android:layout_marginLeft="10dip"
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dip"
-            android:background="#4d69ff"
+            android:backgroundTint="#F96060"
             android:padding="10dp"
             android:text="Select from album"
-            android:textColor="#BBDEFB"
+            android:textColor="#fff"
             android:textSize="18sp"
             android:textStyle="bold" />
 
