@@ -4,6 +4,7 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
+            android:background="#FDC439"
     >
 
     <include
@@ -16,13 +17,27 @@
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
         android:paddingLeft="20dp"
-
+        android:background="@drawable/card_background"
         >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:text="Add Diary"
+            android:textColor="#FDC439"
+            android:textSize="35dp"
+            android:textStyle="bold" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginRight="20dp"
             android:orientation="vertical"
-            android:paddingRight="20dp"
             >
 
             <TextView
@@ -46,12 +61,11 @@
                 android:minLines="8"
                 android:paddingLeft="20dp"
                 android:paddingRight="20dp"
-                android:scrollbars="vertical"
-                />
+                android:scrollbars="vertical" />
 
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
 
             <com.example.mydiary.widget.LinedEditText
                 android:id="@+id/add_diary_et_content"
@@ -65,11 +79,10 @@
                 android:maxLines="10"
                 android:minLines="8"
                 android:paddingLeft="20dp"
-                android:paddingRight="20dp"
                 android:paddingTop="10dp"
+                android:paddingRight="20dp"
                 android:scrollbars="vertical"
-                android:textSize="17sp"
-                />
+                android:textSize="17sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"

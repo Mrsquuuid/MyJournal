@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.mydiary" >
+    package="com.example.mydiary">
 
     <uses-permission android:name="android.permission.KILL_BACKGROUND_PROCESSES" />
     <uses-permission android:name="android.permission.INTERNET" />
-
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
-
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
-    <uses-permission android:name="android.permission.STORAGE"/>
+    <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -19,13 +19,14 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".ui.MapActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <!-- android:name="com.example.mydiary.DiaryApplication" -->
+            android:theme="@style/AppTheme.NoActionBar"></activity> <!-- android:name="com.example.mydiary.DiaryApplication" -->
         <!-- android:allowBackup="true" -->
         <!-- android:icon="@drawable/search" -->
         <!-- android:label="@string/app_name" -->
@@ -37,7 +38,7 @@
         <activity
             android:name=".ui.SignUpActivity"
             android:exported="true" />
-        <activity android:name=".ui.LogInActivity" >
+        <activity android:name=".ui.LogInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -46,7 +47,7 @@
         </activity>
         <activity
             android:name=".ui.DiaryHomeActivity"
-            tools:ignore="WrongManifestParent" >
+            tools:ignore="WrongManifestParent">
 
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN"/> -->
@@ -61,22 +62,17 @@
             tools:ignore="WrongManifestParent" />
         <activity
             android:name=".ui.TestActivity"
-            tools:ignore="WrongManifestParent" >
-        </activity>
+            tools:ignore="WrongManifestParent"></activity>
         <activity
             android:name=".ui.CameraActivity"
-            tools:ignore="WrongManifestParent" >
-        </activity>
-
+            tools:ignore="WrongManifestParent"></activity>
         <activity
             android:name=".ui.VoiceMemoActivity"
-            tools:ignore="WrongManifestParent" >
-        </activity>
-
+            tools:ignore="WrongManifestParent"></activity>
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -87,7 +83,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
-
     </application>
 
 </manifest>

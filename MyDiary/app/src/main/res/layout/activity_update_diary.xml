@@ -4,18 +4,14 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
+    android:background="#FDC439"
     >
 
     <include
         layout="@layout/part_common_title"
         />
 
-    <TextView
-        android:id="@+id/update_diary_tv_tag"
-        android:layout_width="0.001dp"
-        android:layout_height="0.001dp"
-        android:text="sdafaf"
-        />
+
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -24,12 +20,30 @@
         android:paddingTop="20dp"
         android:paddingBottom="20dp"
         android:paddingLeft="20dp"
+        android:background="@drawable/card_background"
         >
+
+        <TextView
+            android:id="@+id/update_diary_tv_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center_vertical"
+            android:text="Update a Diary"
+            android:textColor="#FDC439"
+            android:textSize="35dp"
+            android:textStyle="bold"
+            />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingRight="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="75dp"
+            android:layout_marginRight="20dp"
             >
 
             <TextView
