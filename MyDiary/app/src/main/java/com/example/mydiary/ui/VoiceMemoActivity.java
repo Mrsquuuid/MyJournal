@@ -5,16 +5,26 @@ import static android.Manifest.permission.RECORD_AUDIO;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.text.Layout;
+import android.view.View;
+import android.widget.Adapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -29,12 +39,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import butterknife.Bind;
+import butterknife.OnClick;
+
 public class VoiceMemoActivity extends AppCompatActivity {
-    LinearLayout layout;
+    RelativeLayout layout;
 
     RecyclerView msgList;
 
     VoiceAdapter adapter = new VoiceAdapter();
+
+    LinearLayout linearLayout;
 
     private Context context;
 
@@ -58,6 +73,9 @@ public class VoiceMemoActivity extends AppCompatActivity {
 
     private List<File> recordingList = new ArrayList<>();
 
+    public VoiceMemoActivity() {
+    }
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -65,6 +83,9 @@ public class VoiceMemoActivity extends AppCompatActivity {
         context = this;
         setContentView(R.layout.activity_voice_memo);
         this.setTitle("Voice Memo");
+        layout = findViewById(R.id.layout);
+        linearLayout = findViewById(R.id.main_area);
+        msgList = findViewById(R.id.msgList);
 
         recording = new File(context.getExternalCacheDir(),FILE_NAME);
         if(!recording.exists()){
@@ -74,8 +95,6 @@ public class VoiceMemoActivity extends AppCompatActivity {
 
         showRecording();
 
-        layout = findViewById(R.id.layout);
-        msgList = findViewById(R.id.msgList);
 
         // get buttons
         start = findViewById(R.id.startRec);
@@ -90,13 +109,34 @@ public class VoiceMemoActivity extends AppCompatActivity {
                 startPlay(position);
             }
         });
+        adapter.addChildLongClickViewIds(R.id.recording_each);
+        adapter.setOnItemChildLongClickListener((adapter, view, position)->{
+            if(R.id.recording_each==view.getId()) {
+                File temp = recordingList.get(position);
+                recordingList.remove(position);
+                Uri path = Uri.fromFile(temp);
+                deleteFile(path);
+                adapter.notifyDataSetChanged();
+            }
+            return false;
+        });
         msgList.setAdapter(adapter);
 
     }
+
+
     public void delete(){
         File[] files = recording.listFiles();
         for(File file: files){
             file.delete();
+        }
+    }
+    public void deleteFile(Uri uri){
+        File[] files = recording.listFiles();
+        for(File file: files){
+            if(file.getPath().equals(uri.getPath())){
+                file.delete();
+            }
         }
     }
 
@@ -215,4 +255,5 @@ public class VoiceMemoActivity extends AppCompatActivity {
             }
         }
     }
+
 }
