@@ -8,9 +8,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.CalendarView;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
 import cc.trity.floatingactionbutton.FloatingActionButton;
 
 import com.example.mydiary.db.ImageDatabaseHelper;
@@ -27,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageDatabaseHelper mySQLiteOpenHelper;
     SQLiteDatabase mydb;
     Bitmap imagebitmap;
+    CalendarView calendarView;
+    TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +72,18 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MapActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        //calendar
+        calendarView=findViewById(R.id.calendar);
+        textView=findViewById(R.id.textview);
+
+        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+            @Override
+            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                String date = dayOfMonth+"/"+month+"/"+year;
+                textView.setText(date);
             }
         });
     }
@@ -129,5 +147,6 @@ public class MainActivity extends AppCompatActivity {
             cursor.close();
         }
     }
+
 
 }
