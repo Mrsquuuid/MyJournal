@@ -6,6 +6,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -20,12 +21,18 @@ import androidx.fragment.app.Fragment;
 import androidx.core.content.FileProvider;
 import android.view.View;
 import android.widget.Toast;
+import android.content.ContentValues;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
+
 
 import com.example.mydiary.R;
 import com.example.mydiary.cameraview.PictureSelectorDialog;
+import com.example.mydiary.db.ImageDatabaseHelper;
 import com.yalantis.ucrop.UCrop;
 
-
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -213,6 +220,12 @@ public abstract class PictureSelectorFragment extends Fragment implements Pictur
                 .start(getContext(), this);
     }
 
+    private ImageDatabaseHelper mySQLiteOpenHelper;
+    SQLiteDatabase mydb;
+
+    String id="1";//赋值1，2，3...，分别是第一，第二，第三张图片...
+
+
     /**
      * Return value of successful processing
      *
@@ -225,6 +238,38 @@ public abstract class PictureSelectorFragment extends Fragment implements Pictur
             Bitmap bitmap = null;
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), resultUri);
+                // store the image into the database
+                mySQLiteOpenHelper = new ImageDatabaseHelper(getContext(), "image.db", null, 1);
+                // 创建一个可读写的数据库
+                mydb = mySQLiteOpenHelper.getWritableDatabase();
+                Cursor cursor = mydb.query("imagetable", null, null, null, null, null, null);
+                int i = 0;
+                //判断cursor不为空 这个很重要
+
+                if (cursor != null) {
+                    while (cursor.moveToNext()) {
+                        i+=1;
+                    }
+                    cursor.close();
+                }
+                System.out.println("Total number of image:");
+                System.out.println(i);
+
+                int size = bitmap.getWidth() * bitmap.getHeight() * 4;
+                ByteArrayOutputStream baos = new ByteArrayOutputStream(size);
+                //设置位图的压缩格式，质量为100%，并放入字节数组输出流中
+                bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
+                //将字节数组输出流转化为字节数组byte[]
+                byte[] imagedata = baos.toByteArray();
+                ContentValues cv = new ContentValues();
+                cv.put("_id", i+1);
+                cv.put("image", imagedata);
+                mydb.replace("imagetable", null, cv);
+
+                //关闭字节数组输出流
+                baos.close();
+
+
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
