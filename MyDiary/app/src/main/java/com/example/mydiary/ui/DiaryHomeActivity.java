@@ -45,7 +45,7 @@ public class DiaryHomeActivity extends AppCompatActivity {
 
     @Bind(R.id.common_iv_back)
     ImageView mCommonIvBack;
-    @Bind(R.id.common_tv_title)
+    @Bind(R.id.tv_title)
     TextView mCommonTvTitle;
     @Bind(R.id.common_iv_test)
     ImageView mCommonIvTest;

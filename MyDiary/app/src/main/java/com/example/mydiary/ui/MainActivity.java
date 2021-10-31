@@ -11,6 +11,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -18,7 +19,7 @@ import android.widget.TextView;
 import cc.trity.floatingactionbutton.FloatingActionButton;
 
 import com.example.mydiary.db.ImageDatabaseHelper;
-import com.makeramen.roundedimageview.RoundedImageView;
+//import com.makeramen.roundedimageview.RoundedImageView;
 
 import com.example.mydiary.R;
 
@@ -27,7 +28,8 @@ public class MainActivity extends AppCompatActivity {
 
     private ImageButton toCamera,toVoice,toNavigation;
     private FloatingActionButton toDiary;
-    private RoundedImageView image1,image2,image3;
+    private Button toDiary2,toCamera2,toVoice2,toNavigation2;
+    //private RoundedImageView image1,image2,image3;
     private ImageDatabaseHelper mySQLiteOpenHelper;
     SQLiteDatabase mydb;
     Bitmap imagebitmap;
@@ -39,41 +41,10 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //loadImages();
-        toDiary = findViewById(R.id.diary_home_btn);
-        toDiary.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, DiaryHomeActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        toCamera = findViewById(R.id.camera_btn);
-        toCamera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        toVoice = findViewById(R.id.voice_btn);
-        toVoice.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, VoiceMemoActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        toNavigation = findViewById(R.id.user_btn);
-        toNavigation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MapActivity.class);
-                startActivity(intent);
-            }
-        });
+        loadDiary();
+        loadCamera();
+        loadVoice();
+        loadMap();
 
         //calendar
         calendarView=findViewById(R.id.calendar);
@@ -93,6 +64,83 @@ public class MainActivity extends AppCompatActivity {
         context.startActivity(intent);
     }
 
+    protected void loadDiary(){
+        toDiary = findViewById(R.id.diary_home_btn);
+        toDiary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DiaryHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+        toDiary2 = findViewById(R.id.diary_image_btn);
+        toDiary2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DiaryHomeActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    protected void loadCamera(){
+        toCamera = findViewById(R.id.camera_btn);
+        toCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(intent);
+            }
+        });
+        toCamera2 = findViewById(R.id.image_image_btn);
+        toCamera2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, CameraActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    protected void loadVoice(){
+        toVoice = findViewById(R.id.voice_btn);
+        toVoice.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, VoiceMemoActivity.class);
+                startActivity(intent);
+            }
+        });
+        toVoice2 = findViewById(R.id.voice_image_btn);
+        toVoice2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, VoiceMemoActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    protected void loadMap(){
+        toNavigation = findViewById(R.id.map_btn);
+        toNavigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                startActivity(intent);
+            }
+        });
+        toNavigation2 = findViewById(R.id.map_image_btn);
+        toNavigation2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MapActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    /*
     protected void loadImages(){
         image1 = findViewById(R.id.imageView1);
         image2 = findViewById(R.id.imageView2);
@@ -148,5 +196,5 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
+*/
 }

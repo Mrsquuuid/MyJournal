@@ -15,7 +15,7 @@
         android:layout_width="50dp"
         android:layout_height="40dp"
         android:layout_gravity="center_vertical"
-        android:src="@drawable/icon_arrow_arrow_left"
+        android:src="@drawable/return_btn"
         />
 
 </androidx.appcompat.widget.Toolbar>

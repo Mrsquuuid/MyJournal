@@ -12,17 +12,19 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.mydiary.Main;
 import com.example.mydiary.R;
 import com.example.mydiary.camerafragment.MainFragment;
 
 public class CameraActivity extends AppCompatActivity {
     private ImageView go_back;
     Toolbar toolbar;
+    ImageView back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.camera_main);
-
+        this.setTitle("Select a image");
         initMainFragment();
     }
 

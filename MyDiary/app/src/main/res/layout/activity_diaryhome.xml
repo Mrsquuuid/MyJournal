@@ -6,7 +6,6 @@
     android:id="@+id/main_rl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FDC439"
     android:orientation="vertical"
     tools:context=".ui.DiaryHomeActivity"
     >
@@ -26,20 +25,19 @@
             android:id="@+id/item_first"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/card_background"
             android:orientation="vertical"
-            android:paddingLeft="20dp"
-            android:paddingTop="20dp"
-            android:paddingRight="10dp">
+            android:paddingLeft="30dp"
+            android:paddingRight="20dp"
+            android:background="#fff">
 
             <TextView
+                android:id="@+id/tv_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"
                 android:gravity="center_vertical"
                 android:text="All Diary"
-                android:textColor="#FDC439"
+                android:textColor="#000"
                 android:textSize="35dp"
                 android:textStyle="bold" />
 

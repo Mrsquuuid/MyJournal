@@ -5,99 +5,141 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:background="#F5F5F5"
     tools:context=".ui.MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="65dp">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-        <ImageButton
-            android:id="@+id/home_btn"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/icon_interfaces_home" />
-
-
-        <ImageButton
-            android:id="@+id/camera_btn"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/icon_media_camera" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="" />
-
-        <ImageButton
-            android:id="@+id/voice_btn"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/icon_media_microphone" />
-
-        <ImageButton
-            android:id="@+id/user_btn"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="#00000000"
-            android:scaleType="fitCenter"
-            app:srcCompat="@drawable/icon_interfaces_user" />
-    </LinearLayout>
-
-    <cc.trity.floatingactionbutton.FloatingActionButton
-        android:id="@+id/diary_home_btn"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="600dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/save"
-        app:fabSize="normal"
-        app:fab_colorNormal="#F96060"
-        app:fab_icon="@drawable/add"
-        app:fab_title="FAB ADD" />
-
-
+        android:orientation="vertical">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="220dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/home_back"/>
     <TextView
         android:id="@+id/welcome1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="20dp"
-        android:text="Welcome to My Diary"
+        android:text="Hello!"
         android:textColor="#000"
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:textStyle="bold" />
 
-    <!--calendar-->
-    <CalendarView
-        android:id="@+id/calendar"
+    <TextView
+        android:id="@+id/welcome2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:text="What do you want to record today?"
+        android:textSize="18dp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
         android:layout_marginLeft="30dp"
-        ></CalendarView>
+        android:layout_marginRight="30dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="25dp">
+            <Button
+                android:id="@+id/diary_image_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:background="@drawable/diary_button"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Diary"
+                android:gravity="center"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="25dp">
+            <Button
+                android:id="@+id/image_image_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:background="@drawable/image_button"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Image"
+                android:gravity="center"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginRight="25dp">
+            <Button
+                android:id="@+id/voice_image_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:background="@drawable/voice_button"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Voice"
+                android:gravity="center"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/map_image_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:background="@drawable/map_button"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location"
+                android:gravity="center"
+                />
+        </LinearLayout>
+    </LinearLayout>
+        <!--calendar-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/calendar"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp">
+        <CalendarView
+            android:id="@+id/calendar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"></CalendarView>
 
     <TextView
         android:layout_width="wrap_content"
@@ -105,226 +147,73 @@
         android:id="@+id/textview"
         android:layout_above="@+id/calendar"></TextView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/story_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="370dp"
-        android:layout_marginRight="10dp"
-        android:paddingBottom="20dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="2dp">
-
-        <TextView
-            android:id="@+id/stories"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:text="Stories"
-            android:textColor="#000"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <HorizontalScrollView
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="45dp"
-            android:layout_marginBottom="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp">
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/calendar"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="20dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="2dp">
 
-            <LinearLayout
+            <TextView
+                android:id="@+id/shot"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="15dp"
+                android:text="Best moment this week"
+                android:textColor="#000"
+                android:textSize="20dp" />
 
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/profile_image1"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:paddingRight="10dp"
-                    android:src="@drawable/temp1"
-                    app:civ_border_color="#00000000"
-                    app:civ_border_width="2dp" />
-
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/profile_image2"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:paddingRight="10dp"
-                    android:src="@drawable/temp1"
-                    app:civ_border_color="#00000000"
-                    app:civ_border_width="2dp" />
-
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/profile_image3"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:paddingRight="10dp"
-                    android:src="@drawable/temp1"
-                    app:civ_border_color="#00000000"
-                    app:civ_border_width="2dp" />
-
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/profile_image5"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:paddingRight="10dp"
-                    android:src="@drawable/temp1"
-                    app:civ_border_color="#00000000"
-                    app:civ_border_width="2dp" />
-
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/profile_image6"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:paddingRight="10dp"
-                    android:src="@drawable/temp1"
-                    app:civ_border_color="#00000000"
-                    app:civ_border_width="2dp" />
-
-                <de.hdodenhof.circleimageview.CircleImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/profile_image4"
-                    android:layout_width="96dp"
-                    android:layout_height="96dp"
-                    android:paddingRight="10dp"
-                    android:src="@drawable/temp1"
-                    app:civ_border_color="#00000000"
-                    app:civ_border_width="2dp" />
-            </LinearLayout>
-        </HorizontalScrollView>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/story_card"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="10dp"
-        android:paddingBottom="20dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="2dp">
-
-        <TextView
-            android:id="@+id/shot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
-            android:text="Best moment this week"
-            android:textColor="#000"
-            android:textSize="20dp" />
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="300dp"
-            android:layout_marginTop="55dp">
-
-            <LinearLayout
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
-
-                <com.makeramen.roundedimageview.RoundedImageView xmlns:app="http://schemas.android.com/apk/res-auto"
-                    android:id="@+id/imageView1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:paddingLeft="10dp"
-                    android:paddingRight="5dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/temp1"
-                    app:riv_border_color="#00000000"
-                    app:riv_border_width="3dip"
-                    app:riv_corner_radius_bottom_left="20dp"
-                    app:riv_corner_radius_bottom_right="20dp"
-                    app:riv_corner_radius_top_left="20dp"
-                    app:riv_corner_radius_top_right="20dp"
-                    app:riv_mutate_background="false"
-                    app:riv_oval="false"
-                    app:riv_tile_mode="clamp" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:orientation="vertical"
-                    android:paddingLeft="5dp"
-                    android:paddingRight="10dp">
-
-                    <com.makeramen.roundedimageview.RoundedImageView
-                        android:id="@+id/imageView2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_weight="1"
-                        android:paddingBottom="5dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/temp2"
-                        app:riv_border_color="#00000000"
-                        app:riv_border_width="3dip"
-                        app:riv_corner_radius_bottom_left="20dp"
-                        app:riv_corner_radius_bottom_right="20dp"
-                        app:riv_corner_radius_top_left="20dp"
-                        app:riv_corner_radius_top_right="20dp"
-                        app:riv_mutate_background="false"
-                        app:riv_oval="false"
-                        app:riv_tile_mode="clamp" />
-
+                android:layout_height="300dp"
+                android:layout_marginTop="55dp"
+                android:padding="20dp">
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="horizontal"
-                        android:paddingTop="5dp">
-
-                        <com.makeramen.roundedimageview.RoundedImageView
-                            android:id="@+id/imageView3"
-                            android:layout_width="100dp"
+                        android:paddingBottom="20dp"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="300dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:paddingRight="5dp"
-                            android:scaleType="centerCrop"
-                            android:src="@drawable/temp3"
-                            app:riv_border_color="#00000000"
-                            app:riv_border_width="3dip"
-                            app:riv_corner_radius_bottom_left="20dp"
-                            app:riv_corner_radius_bottom_right="20dp"
-                            app:riv_corner_radius_top_left="20dp"
-                            app:riv_corner_radius_top_right="20dp"
-                            app:riv_mutate_background="false"
-                            app:riv_oval="false"
-                            app:riv_tile_mode="clamp" />
-
-                        <com.makeramen.roundedimageview.RoundedImageView
-                            android:id="@+id/imageView4"
-                            android:layout_width="70dp"
+                            android:scaleType="fitXY"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/temp1"/>
+                        <ImageView
+                            android:layout_width="300dp"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:paddingLeft="5dp"
-                            android:scaleType="center"
-                            android:src="@drawable/temp1"
-                            app:riv_border_color="#00000000"
-                            app:riv_border_width="3dip"
-                            app:riv_corner_radius_bottom_left="20dp"
-                            app:riv_corner_radius_bottom_right="20dp"
-                            app:riv_corner_radius_top_left="20dp"
-                            app:riv_corner_radius_top_right="20dp"
-                            app:riv_mutate_background="false"
-                            app:riv_oval="false"
-                            app:riv_tile_mode="clamp" />
-
+                            android:scaleType="fitXY"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/temp2"/>
+                        <ImageView
+                            android:layout_width="300dp"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/temp3"/>
+                        <ImageView
+                            android:layout_width="300dp"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:layout_marginRight="20dp"
+                            android:src="@drawable/temp1"/>
                     </LinearLayout>
-                </LinearLayout>
-            </LinearLayout>
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
+                </HorizontalScrollView>
+
+
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+    </ScrollView>
+
+    <include layout="@layout/home_bottom"></include>
 </RelativeLayout>
 

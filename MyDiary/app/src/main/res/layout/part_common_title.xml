@@ -2,31 +2,20 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/common_title_ll"
-              android:background="@drawable/add_back"
+              android:background="@drawable/diary_back"
               android:layout_width="match_parent"
-              android:layout_height="270dp"
+              android:layout_height="210dp"
               android:orientation="horizontal">
+
 
     <ImageView
         android:id="@+id/common_iv_back"
-        android:paddingLeft="5dp"
         android:layout_width="50dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="50dp"
-        android:src="@drawable/ic_arrow_back_black_24dp"
-        />
-
-    <TextView
-        android:id="@+id/common_tv_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
+        android:layout_marginTop="70dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center_vertical"
-        android:text="All Diary"
-        android:textColor="#FDC439"
-        android:textSize="35dp"
-        android:textStyle="bold" />
+        android:paddingLeft="10dp"
+        android:src="@drawable/return_btn" />
 
     <ImageView
         android:id="@+id/common_iv_test"

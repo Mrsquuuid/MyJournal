@@ -54,7 +54,7 @@ public class UpdateDiaryActivity extends AppCompatActivity {
     FloatingActionButton mUpdateDiaryFabDelete;
     @Bind(R.id.right_labels)
     FloatingActionsMenu mRightLabels;
-    @Bind(R.id.common_tv_title)
+    @Bind(R.id.tv_title)
     TextView mCommonTvTitle;
     @Bind(R.id.common_title_ll)
     LinearLayout mCommonTitleLl;
@@ -146,7 +146,7 @@ public class UpdateDiaryActivity extends AppCompatActivity {
         }
     }
 
-    @OnClick(R.id.common_tv_title)
+    @OnClick(R.id.tv_title)
     public void onClick() {
     }
 
