@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        loadImages();
+        //loadImages();
         toDiary = findViewById(R.id.diary_home_btn);
         toDiary.setOnClickListener(new View.OnClickListener() {
             @Override
