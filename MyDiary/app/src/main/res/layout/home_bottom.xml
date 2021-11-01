@@ -8,14 +8,15 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="75dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="0dp"
-        android:background="@drawable/card_background"
+        android:background="@drawable/home_bg"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:paddingLeft="20dp"
         android:paddingRight="20dp"
-        android:paddingLeft="20dp">
+        android:paddingTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <ImageButton
             android:id="@+id/home_btn"
@@ -25,7 +26,7 @@
             android:layout_weight="1"
             android:backgroundTint="#00000000"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/icon_interfaces_home" />
+            app:srcCompat="@drawable/home" />
 
 
         <ImageButton
@@ -36,7 +37,7 @@
             android:layout_weight="1"
             android:backgroundTint="#00000000"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/icon_media_camera" />
+            app:srcCompat="@drawable/camera" />
 
         <TextView
             android:id="@+id/textView"
@@ -53,7 +54,7 @@
             android:layout_weight="1"
             android:backgroundTint="#00000000"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/icon_media_microphone" />
+            app:srcCompat="@drawable/microphone" />
 
         <ImageButton
             android:id="@+id/map_btn"
@@ -63,7 +64,7 @@
             android:layout_weight="1"
             android:backgroundTint="#00000000"
             android:scaleType="fitCenter"
-            app:srcCompat="@drawable/icon_interfaces_map" />
+            app:srcCompat="@drawable/placeholder" />
     </LinearLayout>
 
     <cc.trity.floatingactionbutton.FloatingActionButton

@@ -11,7 +11,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="65dp">
+        android:layout_marginBottom="75dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,7 +26,7 @@
         android:id="@+id/welcome1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="20dp"
         android:text="Hello!"
         android:textColor="#000"
@@ -37,7 +37,7 @@
         android:id="@+id/welcome2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="30dp"
         android:layout_marginTop="10dp"
         android:text="What do you want to record today?"
         android:textSize="18dp" />
@@ -48,8 +48,8 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_marginTop="15dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp">
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -128,10 +128,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/calendar"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="15dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="2dp">
         <CalendarView
@@ -152,8 +152,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/calendar"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             app:cardCornerRadius="20dp"
             app:cardElevation="2dp">
@@ -170,7 +170,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="300dp"
+                android:layout_height="340dp"
                 android:layout_marginTop="55dp"
                 android:padding="20dp">
                 <HorizontalScrollView
@@ -182,28 +182,32 @@
                         android:paddingBottom="20dp"
                         android:orientation="horizontal">
                         <ImageView
-                            android:layout_width="300dp"
+                            android:layout_width="310dp"
                             android:layout_height="match_parent"
                             android:scaleType="fitXY"
                             android:layout_marginRight="20dp"
+                            android:paddingLeft="20dp"
                             android:src="@drawable/temp1"/>
                         <ImageView
-                            android:layout_width="300dp"
+                            android:layout_width="310dp"
                             android:layout_height="match_parent"
                             android:scaleType="fitXY"
                             android:layout_marginRight="20dp"
+                            android:paddingLeft="20dp"
                             android:src="@drawable/temp2"/>
                         <ImageView
-                            android:layout_width="300dp"
+                            android:layout_width="310dp"
                             android:layout_height="match_parent"
                             android:scaleType="fitXY"
                             android:layout_marginRight="20dp"
+                            android:paddingLeft="20dp"
                             android:src="@drawable/temp3"/>
                         <ImageView
-                            android:layout_width="300dp"
+                            android:layout_width="310dp"
                             android:layout_height="match_parent"
                             android:scaleType="fitXY"
                             android:layout_marginRight="20dp"
+                            android:paddingLeft="20dp"
                             android:src="@drawable/temp1"/>
                     </LinearLayout>
                 </HorizontalScrollView>
