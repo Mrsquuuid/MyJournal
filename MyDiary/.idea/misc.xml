@@ -19,7 +19,7 @@
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_diaryhome.xml" value="0.33" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_forgotpassword.xml" value="0.20625" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_login.xml" value="0.22" />
-        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_navigation.xml" value="0.29296875" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_signup.xml" value="0.20625" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/activity_test.xml" value="0.20625" />
@@ -34,6 +34,7 @@
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/fragment_second.xml" value="0.20625" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/home_bottom.xml" value="0.33" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/item_first.xml" value="0.20625" />
+        <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/item_image.xml" value="0.23697916666666666" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/item_rv_diary.xml" value="0.20625" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/layout_picture_selector.xml" value="0.2" />
         <entry key="..\:/Users/86188/AndroidStudioProjects/MyJournal/MyDiary/app/src/main/res/layout/part_common_title.xml" value="0.33" />

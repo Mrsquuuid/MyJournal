@@ -16,6 +16,10 @@ import com.example.mydiary.Main;
 import com.example.mydiary.R;
 import com.example.mydiary.camerafragment.MainFragment;
 
+/**
+ * Created by Hailin Xiong on 2021/10/25.
+ *
+ */
 public class CameraActivity extends AppCompatActivity {
     private ImageView go_back;
     Toolbar toolbar;

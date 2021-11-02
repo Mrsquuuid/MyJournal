@@ -14,6 +14,11 @@ import android.widget.Button;
 import com.example.mydiary.R;
 import com.kevin.dialog.BaseDialog;
 
+/**
+ * Created by Hailin Xiong on 2021/10/25.
+ *
+ */
+
 public class PictureSelectorDialog extends BaseDialog implements View.OnClickListener {
 
     private static final String TAG = "SelectPictureDialog";

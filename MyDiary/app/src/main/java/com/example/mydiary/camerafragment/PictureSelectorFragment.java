@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -37,7 +38,10 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-
+/**
+ * Created by Hailin Xiong on 2021/10/25.
+ *
+ */
 public abstract class PictureSelectorFragment extends Fragment implements PictureSelectorDialog.OnSelectedListener {
 
     private static final int REQUEST_STORAGE_READ_ACCESS_PERMISSION = 101;
@@ -162,6 +166,7 @@ public abstract class PictureSelectorFragment extends Fragment implements Pictur
         }
     }
 
+    boolean cameraFlag = false;
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == Activity.RESULT_OK) {
@@ -169,6 +174,7 @@ public abstract class PictureSelectorFragment extends Fragment implements Pictur
                 // Call the camera to take pictures
                 case CAMERA_REQUEST_CODE:
                     File temp = new File(mTempPhotoPath);
+                    cameraFlag = true;
                     startCropActivity(Uri.fromFile(temp));
                     break;
                 // Get directly from album
@@ -238,13 +244,13 @@ public abstract class PictureSelectorFragment extends Fragment implements Pictur
             Bitmap bitmap = null;
             try {
                 bitmap = MediaStore.Images.Media.getBitmap(getContext().getContentResolver(), resultUri);
+
                 // store the image into the database
                 mySQLiteOpenHelper = new ImageDatabaseHelper(getContext(), "image.db", null, 1);
-                // 创建一个可读写的数据库
+                // Create a read-write database
                 mydb = mySQLiteOpenHelper.getWritableDatabase();
                 Cursor cursor = mydb.query("imagetable", null, null, null, null, null, null);
                 int i = 0;
-                //判断cursor不为空 这个很重要
 
                 if (cursor != null) {
                     while (cursor.moveToNext()) {
@@ -257,16 +263,15 @@ public abstract class PictureSelectorFragment extends Fragment implements Pictur
 
                 int size = bitmap.getWidth() * bitmap.getHeight() * 4;
                 ByteArrayOutputStream baos = new ByteArrayOutputStream(size);
-                //设置位图的压缩格式，质量为100%，并放入字节数组输出流中
                 bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos);
-                //将字节数组输出流转化为字节数组byte[]
+
                 byte[] imagedata = baos.toByteArray();
                 ContentValues cv = new ContentValues();
                 cv.put("_id", i+1);
                 cv.put("image", imagedata);
                 mydb.replace("imagetable", null, cv);
 
-                //关闭字节数组输出流
+                //Close byte array output stream
                 baos.close();
 
 
@@ -349,7 +354,7 @@ public abstract class PictureSelectorFragment extends Fragment implements Pictur
     }
 
     /**
-     * 设置图片选择的回调监听
+     * set Listener on Picture Selected
      *
      * @param l
      */
@@ -358,11 +363,11 @@ public abstract class PictureSelectorFragment extends Fragment implements Pictur
     }
 
     /**
-     * 图片选择的回调接口
+     * Callback Listener for picture selection
      */
     public interface OnPictureSelectedListener {
         /**
-         * 图片选择的监听回调
+         * Callback Listener for picture selection
          *
          * @param fileUri
          * @param bitmap

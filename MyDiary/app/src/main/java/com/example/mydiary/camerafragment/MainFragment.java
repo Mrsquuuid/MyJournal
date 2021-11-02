@@ -19,6 +19,11 @@ import com.example.mydiary.ui.CameraActivity;
 import com.example.mydiary.ui.DiaryHomeActivity;
 import com.example.mydiary.ui.MainActivity;
 
+/**
+ * Created by Hailin Xiong on 2021/10/25.
+ *
+ */
+
 public class MainFragment extends PictureSelectorFragment {
 
     Toolbar toolbar;

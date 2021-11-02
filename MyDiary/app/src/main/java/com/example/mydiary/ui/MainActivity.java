@@ -10,18 +10,27 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import cc.trity.floatingactionbutton.FloatingActionButton;
 
+import com.example.mydiary.bean.ImageBean;
 import com.example.mydiary.db.ImageDatabaseHelper;
 //import com.makeramen.roundedimageview.RoundedImageView;
 
 import com.example.mydiary.R;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,10 +38,10 @@ public class MainActivity extends AppCompatActivity {
     private ImageButton toCamera,toVoice,toNavigation;
     private FloatingActionButton toDiary;
     private Button toDiary2,toCamera2,toVoice2,toNavigation2;
-    //private RoundedImageView image1,image2,image3;
+    private ImageView image1,image2,image3;
     private ImageDatabaseHelper mySQLiteOpenHelper;
     SQLiteDatabase mydb;
-    Bitmap imagebitmap;
+
     CalendarView calendarView;
     TextView textView;
 
@@ -45,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
         loadCamera();
         loadVoice();
         loadMap();
+        loadImages();
 
         //calendar
         calendarView=findViewById(R.id.calendar);
@@ -140,61 +150,41 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /*
+    private List<ImageBean> imageList = new ArrayList<>();
     protected void loadImages(){
-        image1 = findViewById(R.id.imageView1);
-        image2 = findViewById(R.id.imageView2);
-        image3 = findViewById(R.id.imageView3);
+        initImage();
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.imageList);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(layoutManager);
+        ImageAdapter adapter = new ImageAdapter(imageList);
+        recyclerView.setAdapter(adapter);
+
+    }
+
+    protected void initImage(){
         mySQLiteOpenHelper = new ImageDatabaseHelper(MainActivity.this, "image.db", null, 1);
-        // 创建一个可读写的数据库
+        // Create a read-write database
         mydb = mySQLiteOpenHelper.getWritableDatabase();
-        image1 = findViewById(R.id.imageView1);
-        //创建一个指针
+        // Create a pointer
         Cursor cur = mydb.query("imagetable", null, null, null, null, null, null);
         int num = 0;
-        //判断cursor不为空 这个很重要
 
         if (cur != null) {
+            Bitmap imagebitmap;
+            byte[] imagequery = null;
             while (cur.moveToNext()) {
                 num +=1;
+                int id = cur.getInt(cur.getColumnIndex("_id"));
+                imagequery = cur.getBlob(cur.getColumnIndex("image"));//将Blob数据转化为字节数组
+                //Convert byte array to bitmap
+                imagebitmap = BitmapFactory.decodeByteArray(imagequery, 0, imagequery.length);
+                ImageBean newImage = new ImageBean(imagebitmap);
+                imageList.add(newImage);
             }
             cur.close();
         }
-
-        Cursor cursor = mydb.query("imagetable", new String[]{"_id", "image"}, "_id like ?", new String[]{String.valueOf(num)}, null, null, null);
-        int i = 0;
-        //判断cursor不为空 这个很重要
-
-        if (cursor != null) {
-            // 循环遍历cursor
-            byte[] imagequery = null;
-
-            while (cursor.moveToPrevious()) {
-                i+=1;
-                if(i<4){
-                    int id = cursor.getInt(cursor.getColumnIndex("_id"));
-                    imagequery = cursor.getBlob(cursor.getColumnIndex("image"));//将Blob数据转化为字节数组
-
-                    //将字节数组转化为位图
-                    imagebitmap = BitmapFactory.decodeByteArray(imagequery, 0, imagequery.length);
-                    if(i==1) {
-                        //将位图显示为图片
-                        image1.setImageBitmap(imagebitmap);
-                    }
-                    else if (i==2){
-                        image2.setImageBitmap(imagebitmap);
-                    }
-                    else if (i==3){
-                        image3.setImageBitmap(imagebitmap);
-                    }
-                }
-                else{
-                    break;
-                }
-            }
-            cursor.close();
-        }
+        Collections.reverse(imageList);
     }
 
-*/
 }

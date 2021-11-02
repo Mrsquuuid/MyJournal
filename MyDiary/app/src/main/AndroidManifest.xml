@@ -27,11 +27,6 @@
         <activity
             android:name=".ui.MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
-            <!--
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>-->
         </activity> <!-- android:name="com.example.mydiary.DiaryApplication" -->
         <!-- android:allowBackup="true" -->
         <!-- android:icon="@drawable/search" -->
@@ -45,7 +40,6 @@
             android:name=".ui.SignUpActivity"
             android:exported="true" />
         <activity android:name=".ui.LogInActivity">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -67,7 +61,8 @@
             tools:ignore="WrongManifestParent"></activity>
         <activity
             android:name=".ui.CameraActivity"
-            tools:ignore="WrongManifestParent"></activity>
+            tools:ignore="WrongManifestParent"
+            android:configChanges="orientation|keyboardHidden"></activity>
         <activity
             android:name=".ui.VoiceMemoActivity"
             tools:ignore="WrongManifestParent"></activity>

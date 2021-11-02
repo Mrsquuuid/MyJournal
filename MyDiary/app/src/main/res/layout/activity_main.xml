@@ -171,47 +171,12 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="340dp"
-                android:layout_marginTop="55dp"
+                android:layout_marginTop="40dp"
                 android:padding="20dp">
-                <HorizontalScrollView
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/imageList"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent">
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:paddingBottom="20dp"
-                        android:orientation="horizontal">
-                        <ImageView
-                            android:layout_width="310dp"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitXY"
-                            android:layout_marginRight="20dp"
-                            android:paddingLeft="20dp"
-                            android:src="@drawable/temp1"/>
-                        <ImageView
-                            android:layout_width="310dp"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitXY"
-                            android:layout_marginRight="20dp"
-                            android:paddingLeft="20dp"
-                            android:src="@drawable/temp2"/>
-                        <ImageView
-                            android:layout_width="310dp"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitXY"
-                            android:layout_marginRight="20dp"
-                            android:paddingLeft="20dp"
-                            android:src="@drawable/temp3"/>
-                        <ImageView
-                            android:layout_width="310dp"
-                            android:layout_height="match_parent"
-                            android:scaleType="fitXY"
-                            android:layout_marginRight="20dp"
-                            android:paddingLeft="20dp"
-                            android:src="@drawable/temp1"/>
-                    </LinearLayout>
-                </HorizontalScrollView>
-
+                    android:layout_height="match_parent"/>
 
             </RelativeLayout>
         </androidx.cardview.widget.CardView>

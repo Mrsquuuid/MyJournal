@@ -13,7 +13,10 @@ import android.widget.PopupWindow;
 
 import com.example.mydiary.R;
 
-
+/**
+ * Created by Hailin Xiong on 2021/10/25.
+ *
+ */
 public class SelectPicturePopupWindow extends PopupWindow implements View.OnClickListener {
 
     private Button takePhotoBtn, pickPictureBtn, cancelBtn;
