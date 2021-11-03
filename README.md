@@ -17,7 +17,7 @@ realmobilegroup@gmail.com
 passw@rd123
 ```
 
-1. For the camera part:
+7. For the camera part:
 
    Recommended Emulator: **Nox** (an emulator which support the usage of camera, and the files transferring between computer and emulator is convenient )
 
