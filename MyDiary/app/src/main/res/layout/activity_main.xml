@@ -156,11 +156,6 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"></CalendarView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textview2"
-        android:layout_above="@+id/calendar"></TextView>
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView

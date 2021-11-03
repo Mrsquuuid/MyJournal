@@ -47,7 +47,6 @@ public class MainActivity extends AppCompatActivity {
 
     CalendarView calendarView;
     TextView textView1;
-    TextView textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +62,6 @@ public class MainActivity extends AppCompatActivity {
         //calendar
         calendarView=findViewById(R.id.calendar);
         textView1=findViewById(R.id.textview1);
-        textView2=findViewById(R.id.textview2);
 
         // show current date
         Calendar calendar = Calendar.getInstance();
@@ -92,15 +90,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // calendar view
-        calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int day) {
-                month = month+1;
-                String date = day+"/"+month+"/"+year;
-                textView2.setText(date);
-            }
-        });
     }
 
     public static void startActivity(Context context) {
