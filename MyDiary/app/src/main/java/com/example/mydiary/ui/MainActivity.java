@@ -1,5 +1,6 @@
 package com.example.mydiary.ui;
 
+import android.app.DatePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
@@ -16,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CalendarView;
+import android.widget.DatePicker;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -44,7 +46,8 @@ public class MainActivity extends AppCompatActivity {
     SQLiteDatabase mydb;
 
     CalendarView calendarView;
-    TextView textView;
+    TextView textView1;
+    TextView textView2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,20 +62,43 @@ public class MainActivity extends AppCompatActivity {
 
         //calendar
         calendarView=findViewById(R.id.calendar);
-        textView=findViewById(R.id.textview);
+        textView1=findViewById(R.id.textview1);
+        textView2=findViewById(R.id.textview2);
+
+        // show current date
         Calendar calendar = Calendar.getInstance();
         final int year = calendar.get(Calendar.YEAR);
         final int month = calendar.get(Calendar.MONTH);
         int curruntMonth = month +1;
         final int day = calendar.get(Calendar.DAY_OF_MONTH);
         String date = day+"/"+curruntMonth+"/"+year;
-        textView.setText(date);
+        textView1.setText(date);
+
+        // choose date
+        textView1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(
+                        MainActivity.this, new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int month, int day) {
+                        month = month +1;
+                        String date = day+"-"+month+"-"+year;
+                        textView1.setText(date);
+                    }
+                },year,month,day
+                );
+                datePickerDialog.show();
+            }
+        });
+
+        // calendar view
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override
             public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int day) {
                 month = month+1;
                 String date = day+"/"+month+"/"+year;
-                textView.setText(date);
+                textView2.setText(date);
             }
         });
     }

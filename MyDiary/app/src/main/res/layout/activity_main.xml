@@ -41,7 +41,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textview"
+                android:id="@+id/textview1"
                 android:layout_marginLeft="200dp"
                 android:layout_marginTop="20dp"
                 android:text="Date"
@@ -156,11 +156,11 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"></CalendarView>
 
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:id="@+id/textview"-->
-<!--        android:layout_above="@+id/calendar"></TextView>-->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textview2"
+        android:layout_above="@+id/calendar"></TextView>
 
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
