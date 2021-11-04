@@ -5,11 +5,11 @@ package com.example.mydiary.event;
  * No.1159774
  */
 
-public class StartUpdateDiaryEvent {
+public class StartUDEvent {
 
     private int position;
 
-    public StartUpdateDiaryEvent(int position) {
+    public StartUDEvent(int position) {
         this.position = position;
     }
 

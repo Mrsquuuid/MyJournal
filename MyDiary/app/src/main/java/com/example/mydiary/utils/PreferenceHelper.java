@@ -9,24 +9,24 @@ import android.content.SharedPreferences;
  * No.1159774
  */
 
-public class SpHelper {
+public class PreferenceHelper {
 
     private static final String SP_NAME = "sp_name";
-    private static SpHelper mSpHelper;
+    private static PreferenceHelper mSpHelper;
     private Context mAppContext;
     private SharedPreferences mSharedPreferences;
     private String info;
 
-    private SpHelper(Context context){
+    private PreferenceHelper(Context context){
         mAppContext = context.getApplicationContext();
     }
 
     //Get an instance of sphelper
-    public static SpHelper getInstance(Context context){
+    public static PreferenceHelper getInstance(Context context){
         if(mSpHelper == null){
-            synchronized (SpHelper.class){
+            synchronized (PreferenceHelper.class){
                 if(mSpHelper == null){
-                    mSpHelper = new SpHelper(context);
+                    mSpHelper = new PreferenceHelper(context);
                 }
             }
         }

@@ -1,15 +1,12 @@
 package com.example.mydiary.ui;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import androidx.appcompat.app.ActionBar;
@@ -25,11 +22,11 @@ import android.widget.TextView;
 import com.example.mydiary.R;
 import com.example.mydiary.bean.DiaryBean;
 import com.example.mydiary.db.DiaryDatabaseHelper;
-import com.example.mydiary.event.StartUpdateDiaryEvent;
+import com.example.mydiary.event.StartUDEvent;
 import com.example.mydiary.utils.AppManager;
 import com.example.mydiary.utils.GetDate;
-import com.example.mydiary.utils.SpHelper;
-import com.example.mydiary.utils.StatusBarCompat;
+import com.example.mydiary.utils.PreferenceHelper;
+import com.example.mydiary.utils.StatusHelper;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -95,12 +92,12 @@ public class DiaryHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_diaryhome);
         AppManager.getAppManager().addActivity(this);
         ButterKnife.bind(this);
-        StatusBarCompat.compat(this, Color.parseColor("#161414"));
+        StatusHelper.compat(this, Color.parseColor("#161414"));
         mHelper = new DiaryDatabaseHelper(this, "Diary.db", null, 1);
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
         EventBus.getDefault().register(this);
-        SpHelper spHelper = SpHelper.getInstance(this);
+        PreferenceHelper spHelper = PreferenceHelper.getInstance(this);
         getDiaryBeanList();
         initTitle();
         mMainRvShowDiary.setLayoutManager(new LinearLayoutManager(this));
@@ -156,7 +153,7 @@ public class DiaryHomeActivity extends AppCompatActivity {
     }
 
     @Subscribe
-    public void startUpdateDiaryActivity(StartUpdateDiaryEvent event) {
+    public void startUpdateDiaryActivity(StartUDEvent event) {
         String title = mDiaryBeanList.get(event.getPosition()).getTitle();
         String content = mDiaryBeanList.get(event.getPosition()).getContent();
         String tag = mDiaryBeanList.get(event.getPosition()).getTag();
@@ -183,7 +180,41 @@ public class DiaryHomeActivity extends AppCompatActivity {
         }
     }
 
-
+//    private void getImageFromAlbum(){
+//        try{
+//            Intent i = new Intent(Intent.ACTION_PICK,
+//                    android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+//            startActivityForResult(i, SELECT_PHOTO);
+//        }catch(Exception exp){
+//            Log.i("Error",exp.toString());
+//        }
+//    }
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode,Intent data){
+//        super.onActivityResult(requestCode,resultCode, data);
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if(resultCode == Activity.RESULT_OK)
+//        {
+//            Uri selectedImage = data.getData();
+//            try {
+//                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), selectedImage);
+//                img.setImageBitmap(bitmap);
+//            } catch (IOException e) {
+//                Log.i("TAG", "Some exception " + e);
+//            }
+//
+//        }
+//    }
+//
+//    public static byte[] getBytes(Bitmap image) {
+//        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+//        if( image.getAllocationByteCount() > 2621440 ) {
+//            image.compress(Bitmap.CompressFormat.JPEG, 50, stream);
+//        }else{
+//            image.compress(Bitmap.CompressFormat.PNG, 0, stream);
+//        }
+//        return stream.toByteArray();
+//    }
 
     @Override
     public void onBackPressed() {

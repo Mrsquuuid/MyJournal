@@ -18,21 +18,6 @@ public class GetDate {
 
         StringBuilder stringBuilder = new StringBuilder();
         Calendar now = Calendar.getInstance();
-//
-//        String shu = (int)(now.get(Calendar.MONTH) + 1)  + "月";
-//        SimpleDateFormat sdf = new SimpleDateFormat("MM");
-//        Date date = null;
-//        try {
-//            date = sdf.parse(shu);
-//        } catch (ParseException e) {
-//            e.printStackTrace();
-//        }
-//        sdf = new SimpleDateFormat("MMMMM",Locale.US);
-//
-//        stringBuilder.append(sdf.format(date)+" ");
-//        stringBuilder.append(now.get(Calendar.DAY_OF_MONTH) + "");
-//        stringBuilder.append(" ," + now.get(Calendar.YEAR));
-
 
         Date date = new Date();
         String strDateFormat = "yyyy-MM-dd HH:mm:ss";

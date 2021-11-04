@@ -24,8 +24,8 @@ import com.example.mydiary.R;
 import com.example.mydiary.db.DiaryDatabaseHelper;
 import com.example.mydiary.utils.AppManager;
 import com.example.mydiary.utils.GetDate;
-import com.example.mydiary.utils.StatusBarCompat;
-import com.example.mydiary.widget.LinedEditText;
+import com.example.mydiary.utils.StatusHelper;
+import com.example.mydiary.utils.LinedEditText;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -83,16 +83,13 @@ public class UpdateDiaryActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         mHelper = new DiaryDatabaseHelper(this, "Diary.db", null, 1);
         initTitle();
-        StatusBarCompat.compat(this, Color.parseColor("#161414"));
+        StatusHelper.compat(this, Color.parseColor("#161414"));
 
         Intent intent = getIntent();
         mUpdateDiaryTvDate.setText("Today, " + GetDate.getDate());
         mUpdateDiaryEtTitle.setText(intent.getStringExtra("title"));
         mUpdateDiaryEtContent.setText(intent.getStringExtra("content"));
         mTvTag.setText(intent.getStringExtra("tag"));
-
-
-
     }
 
     private void initTitle() {
@@ -155,4 +152,5 @@ public class UpdateDiaryActivity extends AppCompatActivity {
         super.onBackPressed();
         DiaryHomeActivity.startActivity(this);
     }
+
 }

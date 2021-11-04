@@ -21,8 +21,8 @@ import com.example.mydiary.R;
 import com.example.mydiary.db.DiaryDatabaseHelper;
 import com.example.mydiary.utils.AppManager;
 import com.example.mydiary.utils.GetDate;
-import com.example.mydiary.utils.StatusBarCompat;
-import com.example.mydiary.widget.LinedEditText;
+import com.example.mydiary.utils.StatusHelper;
+import com.example.mydiary.utils.LinedEditText;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -83,7 +83,7 @@ public class AddDiaryActivity extends AppCompatActivity {
         actionBar.hide();
         Intent intent = getIntent();
         mAddDiaryEtTitle.setText(intent.getStringExtra("title"));
-        StatusBarCompat.compat(this, Color.parseColor("#161414"));
+        StatusHelper.compat(this, Color.parseColor("#161414"));
 
         mCommonTvTitle.setText("Add Diary");
         mAddDiaryTvDate.setText("Today, " + GetDate.getDate());
@@ -152,6 +152,71 @@ public class AddDiaryActivity extends AppCompatActivity {
         super.onBackPressed();
         DiaryHomeActivity.startActivity(this);
     }
+
+//
+//    public void setOnItemClickListener(ClickListener clickListener) {
+//        MyAdapter.clickListener = clickListener;
+//    }
+//    public interface ClickListener {
+//        void onItemClick(int position, View v);
+//        void onItemLongClick(int position, View v);
+//    }
+//    //  constructor
+//    public MyAdapter(List<Story> storyList, Context context) {
+//        this.mStory = storyList;
+//        this.context = context;
+//    }
+//
+//    // Create new views (invoked by the layout manager)
+//    @Override
+//    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
+//                                                     int viewType) {
+//        // create a new view
+//        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.story_card, parent, false);
+//
+//        MyViewHolder vh = new MyViewHolder(v);
+//
+//        return vh;
+//    }
+//
+//
+//
+//    // Replace the contents of a view (invoked by the layout manager)
+//    @Override
+//    public void onBindViewHolder(final MyViewHolder holder, final int position) {
+//        // - get element from  dataset at this position
+//        // - replace the contents of the view with that element
+//        dbHelper =  new MyDBHandlerProfile(context);
+//        Bitmap bitmap;
+//        holder.title.setText(mStory.get(position).getStoryTitle());
+//        bitmap = ByteArrayToBitmap( mStory.get(position).getStoryImage());
+//        holder.image.setImageBitmap(bitmap);
+//        holder.delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dbHelper.delete(mStory.get(position));
+//                mStory.remove(holder.getAdapterPosition());
+//                notifyItemRemoved(holder.getAdapterPosition());
+//                notifyItemRangeChanged(holder.getAdapterPosition(), mStory.size());
+//            }
+//        });
+//
+//    }
+//    public Bitmap ByteArrayToBitmap(byte[] byteArray)
+//    {
+//        ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(byteArray);
+//        Bitmap bitmap = BitmapFactory.decodeStream(arrayInputStream);
+//        return bitmap;
+//    }
+//
+//
+//    // Return the size of your dataset (invoked by the layout manager)
+//    @Override
+//    public int getItemCount() {
+//        return mStory.size();
+//    }
+//}
+
 }
 
 

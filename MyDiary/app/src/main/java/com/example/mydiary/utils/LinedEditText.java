@@ -1,4 +1,4 @@
-package com.example.mydiary.widget;
+package com.example.mydiary.utils;
 
 import android.annotation.SuppressLint;
 import android.content.Context;

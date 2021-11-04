@@ -12,7 +12,7 @@ import android.widget.TextView;
 
 import com.example.mydiary.R;
 import com.example.mydiary.bean.DiaryBean;
-import com.example.mydiary.event.StartUpdateDiaryEvent;
+import com.example.mydiary.event.StartUDEvent;
 import com.example.mydiary.utils.GetDate;
 
 import org.greenrobot.eventbus.EventBus;
@@ -75,7 +75,7 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
         holder.mIvEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EventBus.getDefault().post(new StartUpdateDiaryEvent(position));
+                EventBus.getDefault().post(new StartUDEvent(position));
             }
         });
     }
@@ -110,4 +110,67 @@ public class DiaryAdapter extends RecyclerView.Adapter<DiaryAdapter.DiaryViewHol
             mRlEdit = (RelativeLayout) view.findViewById(R.id.item_rl_edit);
         }
     }
+
+//    public void setOnItemClickListener(ClickListener clickListener) {
+//        MyAdapter.clickListener = clickListener;
+//    }
+//    public interface ClickListener {
+//        void onItemClick(int position, View v);
+//        void onItemLongClick(int position, View v);
+//    }
+//    //  constructor
+//    public MyAdapter(List<Story> storyList, Context context) {
+//        this.mStory = storyList;
+//        this.context = context;
+//    }
+//
+//    // Create new views (invoked by the layout manager)
+//    @Override
+//    public MyAdapter.MyViewHolder onCreateViewHolder(ViewGroup parent,
+//                                                     int viewType) {
+//        // create a new view
+//        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.story_card, parent, false);
+//
+//        MyViewHolder vh = new MyViewHolder(v);
+//
+//        return vh;
+//    }
+//
+//
+//
+//    // Replace the contents of a view (invoked by the layout manager)
+//    @Override
+//    public void onBindViewHolder(final MyViewHolder holder, final int position) {
+//        // - get element from  dataset at this position
+//        // - replace the contents of the view with that element
+//        dbHelper =  new MyDBHandlerProfile(context);
+//        Bitmap bitmap;
+//        holder.title.setText(mStory.get(position).getStoryTitle());
+//        bitmap = ByteArrayToBitmap( mStory.get(position).getStoryImage());
+//        holder.image.setImageBitmap(bitmap);
+//        holder.delete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dbHelper.delete(mStory.get(position));
+//                mStory.remove(holder.getAdapterPosition());
+//                notifyItemRemoved(holder.getAdapterPosition());
+//                notifyItemRangeChanged(holder.getAdapterPosition(), mStory.size());
+//            }
+//        });
+//
+//    }
+//    public Bitmap ByteArrayToBitmap(byte[] byteArray)
+//    {
+//        ByteArrayInputStream arrayInputStream = new ByteArrayInputStream(byteArray);
+//        Bitmap bitmap = BitmapFactory.decodeStream(arrayInputStream);
+//        return bitmap;
+//    }
+//
+//
+//    // Return the size of your dataset (invoked by the layout manager)
+//    @Override
+//    public int getItemCount() {
+//        return mStory.size();
+//    }
+//}
 }
