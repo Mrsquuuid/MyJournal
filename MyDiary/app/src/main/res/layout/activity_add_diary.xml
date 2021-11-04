@@ -38,7 +38,7 @@
             >
 
             <TextView
-                android:id="@+id/add_diary_tv_date"
+                android:id="@+id/add_diary_date"
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:gravity="center_vertical"
@@ -48,7 +48,7 @@
                 />
 
             <EditText
-                android:id="@+id/add_diary_et_title"
+                android:id="@+id/add_diary_title"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:background="@drawable/shape_add_diary_title"
@@ -64,8 +64,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
-            <com.example.mydiary.widget.LinedEditText
-                android:id="@+id/add_diary_et_content"
+            <com.example.mydiary.utils.LinedEditText
+                android:id="@+id/add_diary_content"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
@@ -105,7 +105,7 @@
             >
 
             <cc.trity.floatingactionbutton.FloatingActionButton
-                android:id="@+id/add_diary_fab_back"
+                android:id="@+id/add_diary_back"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 app:fab_colorNormal="#24d63c"
@@ -114,7 +114,7 @@
                 />
 
             <cc.trity.floatingactionbutton.FloatingActionButton
-                android:id="@+id/add_diary_fab_add"
+                android:id="@+id/add_diary_floating"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:background="@drawable/save"

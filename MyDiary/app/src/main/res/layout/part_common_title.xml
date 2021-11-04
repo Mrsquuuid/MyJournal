@@ -4,7 +4,7 @@
     android:id="@+id/common_title_ll"
               android:background="@drawable/diary_back"
               android:layout_width="match_parent"
-              android:layout_height="210dp"
+              android:layout_height="130dp"
               android:orientation="horizontal">
 
 
@@ -12,7 +12,7 @@
         android:id="@+id/common_iv_back"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:layout_marginLeft="10dp"
         android:paddingLeft="10dp"
         android:src="@drawable/return_btn" />

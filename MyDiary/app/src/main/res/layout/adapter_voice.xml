@@ -42,7 +42,7 @@
                 android:layout_height="wrap_content" />
 
 
-            <com.example.mydiary.widget.PlayerImage
+            <com.example.mydiary.utils.PlayerImage
                 android:id="@+id/recording_each"
                 android:layout_width="150dp"
                 android:layout_height="50dp"

@@ -85,7 +85,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="20dp"/>
 
-            <com.example.mydiary.widget.LinedEditText
+            <com.example.mydiary.utils.LinedEditText
                 android:id="@+id/update_diary_et_content"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
